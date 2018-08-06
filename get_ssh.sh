@@ -1,4 +1,4 @@
-# ! /bin/bash
+#!/bin/bash
 # Helps you to configure github ssh keys,run:
 # chrmod u+x get_ssh.sh
 # ./get_ssh.sh
