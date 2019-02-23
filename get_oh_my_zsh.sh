@@ -1,5 +1,6 @@
 #!/bin/bash
 
+SCRIPT_PATH = $PWD
 # Check and install zsh
 if command -v zsh >/dev/null 2>&1 ; then
     echo "zsh found"
@@ -7,8 +8,8 @@ if command -v zsh >/dev/null 2>&1 ; then
     zsh -version
 else
     echo "zsh not found, installing zsh"
-    apt-get upgrade && sudo apt-get update
-    sudo apt-get install zsh
+    apt upgrade && sudo apt update
+    sudo apt install zsh
     zsh -version
 fi
 
@@ -19,8 +20,19 @@ if command -v curl >/dev/null 2>&1 ; then
     curl -version
 else
     echo "curl not found, installing curl"
-    apt-get upgrade && sudo apt-get update
-    sudo apt-get install curl
+    apt upgrade && sudo apt update
+    sudo apt install curl
+    curl -version
+fi
+
+# Check and install curl
+if command -v git >/dev/null 2>&1 ; then
+    echo "git found"
+    which git
+    git -version
+else
+    echo "git not found, installing git"
+    sudo apt install git
     curl -version
 fi
 
@@ -34,10 +46,16 @@ else
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     echo "Setting oh-my-zsh as default shell"
     chsh -s $(which zsh)
-    sudo apt-get install fonts-powerline
+    sudo apt install fonts-powerline
 fi
 
+# Installing personal oh-my-zsh configs ands pluguins
+cd ~/.oh-my-zsh/custom/pluguins
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
+mv $SCRIPT_PATH/personal_configs/zshrc ~/.zshrc
+source ~/.zshrc
 
 
 
