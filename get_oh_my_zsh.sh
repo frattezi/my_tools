@@ -49,6 +49,14 @@ else
     sudo apt install fonts-powerline
 fi
 
+# Installing python and virtualenv
+/$SCRIPT_PATH/python_and_virtualenv.sh
+
+# TODO: Check this pls
+if  command -z python >/dev/null 2>&1 ; then
+    echo "Failed to install python =/ face some bash init problems, be strong"
+fi
+
 # Installing personal oh-my-zsh configs ands pluguins
 cd ~/.oh-my-zsh/custom/pluguins
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
