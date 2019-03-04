@@ -6,7 +6,7 @@ export VIRTUALENVWRAPPER_LOG_DIR="$WORKON_HOME"
 export VIRTUALENVWRAPPER_HOOK_DIR="$WORKON_HOME"
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/work
-
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source ~/.local/bin/virtualenvwrapper.sh
 
 # My oh-my-zsh theme
