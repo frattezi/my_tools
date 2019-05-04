@@ -1,0 +1,28 @@
+# Stupid alises
+alias code='code-insiders'
+alias CD='cd'
+alias LS='ls'
+alias sl='ls'
+alias SL='sl'
+alias celar='clear'
+
+# Arch aliases
+alias au='aurman -Syu'
+alias ai='aurman -S'
+alias ar='aurman -R'
+alias as='aurman -S -s'
+
+# Virtualenvwrapper aliases
+alias mkp3='mkvirtualenv -p python'
+alias mkp2='mkvirtualenv -p python2'
+alias rmve='rmvirtualenv'
+
+# Docker aliases
+alias dk='docker'
+alias dki='docker images'
+alias dkc='docker container'
+alias dkcls='docker container ls'
+alias dkk='docker kill'
+
+#Redis aliases
+alias rcli='redis-cli'
